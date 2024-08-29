@@ -11,7 +11,7 @@ SmallTalk2Rec이라는 이름은 가벼운 대화(small talk)을 통해 추천�
 
 
 ## 연락처
-저자: 김민규
+저자: 김민규   
 이메일: mkk4726@naver.com
    
 저자: 조형진    
