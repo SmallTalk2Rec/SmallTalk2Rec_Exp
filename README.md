@@ -15,4 +15,4 @@ SmallTalk2Rec이라는 이름은 가벼운 대화(small talk)을 통해 추천�
 이메일: mkk4726@naver.com
    
 저자: 조형진    
-이메일: 
+이메일: whgudwlsdlrm@naver.com
