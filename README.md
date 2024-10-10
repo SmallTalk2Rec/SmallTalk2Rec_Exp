@@ -13,7 +13,7 @@ SmallTalk2Rec이라는 이름은 가벼운 대화(small talk)을 통해 추천�
 
 ![image](https://github.com/user-attachments/assets/06a14197-b4df-4423-acd2-b57257a4984b)
 
-![image](https://excalidraw.com/#json=T2W4wXnWcmZtvmDO0kC2v,w5nkU5EbZvXubituJx2VIA)
+![image](https://github.com/user-attachments/assets/38ee3dbc-63a4-4410-be33-0ac6af375f46)
 
 
 ## 연락처
