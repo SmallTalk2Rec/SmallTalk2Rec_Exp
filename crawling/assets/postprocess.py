@@ -1,4 +1,4 @@
-from utils import *
+from assets.utils import *
 
 def get_movie_info(movie_name, movie_id, watcha_infos, naver_infos, wiki_infos):
     # 후처리
