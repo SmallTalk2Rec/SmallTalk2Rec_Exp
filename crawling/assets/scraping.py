@@ -77,14 +77,6 @@ def get_watch_infos(driver:webdriver.Chrome, movie_id:str, n_comment:int = 10) -
     watcha_infos['avg_rating_n'] = get_text_by_xpath(driver, avg_rating_xpath_n_xpath)
 
     # 왓챠피디아 기생충 코멘트 더보기 url
-    url = 'https://pedia.watcha.com/ko-KR/contents/mdRL4eL/comments'
-    driver.get(url)
-
-    # JavaScript로 페이지 끝까지 스크롤
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-    time.sleep(2)  # 페이지 로딩 시간을 고려해 잠시 대기
-
-    # 왓챠피디아 기생충 코멘트 더보기 url
     url = f'https://pedia.watcha.com/ko-KR/contents/{movie_id}/comments'
     driver.get(url)
 
@@ -98,15 +90,20 @@ def get_watch_infos(driver:webdriver.Chrome, movie_id:str, n_comment:int = 10) -
     # 1. 스크롤 내려줘야 10개이상 볼 수 있음
     # 2. '보기' 눌러줘야 함
     comments_list = []
-    for i in range(1, n_comment+1):
-        comment_xpath = f'//*[@id="root"]/div[1]/section/section/div/div/div/ul/div[{i}]'
+    for i in range(1, n_comment+1):                
         comment_button_xpath = f'//*[@id="root"]/div[1]/section/section/div/div/div/ul/div[{i}]/div[2]/a/div/span/button'
         if get_text_by_xpath(driver, comment_button_xpath) == '보기':
             try:
                 driver.find_element(By.XPATH,comment_button_xpath).click()
             except:
                 continue
-        comments_list.append(get_text_by_xpath(driver, comment_xpath))
+        
+        title = get_text_by_xpath(driver, f'//*[@id="root"]/div[1]/section/section/div/div/div/ul/div[{i}]/div[1]/div[1]/a/div[2]') # 제목
+        comment = get_text_by_xpath(driver, f'//*[@id="root"]/div[1]/section/section/div/div/div/ul/div[{i}]/div[2]/a/div/div') # 내용
+        rating = get_text_by_xpath(driver, f'//*[@id="root"]/div[1]/section/section/div/div/div/ul/div[{i}]/div[1]/div[2]/span ') # 별점
+        n_likes = get_text_by_xpath(driver, f'//*[@id="root"]/div[1]/section/section/div/div/div/ul/div[{i}]/div[3]/em[1]') # 좋아요 수
+        
+        comments_list.append({'title':title, 'comment':comment, 'rating':rating, 'n_likes':n_likes})
         
     watcha_infos['comments_list'] = comments_list
     

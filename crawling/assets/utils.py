@@ -104,38 +104,6 @@ def separate_cast(cast_list):
 
     return main_cast, supporting_cast
 
-def process_reviews(review_list):
-    processed_reviews = []
-    
-    for review in review_list:
-        parts = review.split('\n')
-        
-        # 유저 이름과 평점은 고정된 위치에 있고,
-        # 이유는 좋아요 수와 답글 수 사이에 있음.
-        user_name = parts[0]  # 첫 번째 요소: 유저 이름
-        rating = float(parts[1])  # 두 번째 요소: 평점
-        
-        # 마지막 두 요소는 항상 좋아요 수와 답글 수
-        likes = int(parts[-3])  # 좋아요 수는 마지막에서 세 번째
-        n_comments = int(parts[-2])  # 답글 수는 마지막에서 두 번째
-        
-        # 이유는 나머지 모든 요소를 합쳐서 처리
-        reason = "\n".join(parts[2:-3])  # 2번째부터 마지막 3번째 전까지는 이유
-
-        # 딕셔너리 생성
-        review_dict = {
-            'user_name': user_name,
-            'rating': rating,
-            'reason': reason,
-            'likes': likes,
-            'n_comments': n_comments
-        }
-
-        # 결과 리스트에 추가
-        processed_reviews.append(review_dict)
-    
-    return processed_reviews
-
 def get_movie_url(driver, movie_name:str) -> str:
     url = f'https://pedia.watcha.com/ko-KR/search?query={movie_name}'
     driver.get(url)

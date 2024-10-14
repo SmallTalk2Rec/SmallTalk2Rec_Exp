@@ -63,7 +63,7 @@ def get_movie_info(movie_name, movie_id, watcha_infos, naver_infos, wiki_infos):
     movie_info['avg_rating'] = watcha_infos['avg_rating']
     movie_info['avg_rating_n'] = extract_number(watcha_infos['avg_rating_n'])
 
-    movie_info['comments'] = process_reviews(watcha_infos['comments_list'])
+    movie_info['comments'] = watcha_infos['comments_list']
 
     # 네이버 후처리    
     movie_info['channel'] = naver_infos.get('채널', None)
