@@ -1,6 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from utils import *
+from assets.utils import *
 
 # 왓챠
 def get_watch_infos(driver:webdriver.Chrome, movie_id:str, n_comment:int = 10) -> dict:
