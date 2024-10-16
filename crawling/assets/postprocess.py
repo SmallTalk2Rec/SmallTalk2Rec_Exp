@@ -8,6 +8,7 @@ def get_movie_info(movie_name, movie_id, watcha_infos, naver_infos, wiki_infos):
     movie_name : 검색한 영화 제목 (str)
     movie_id : 왓챠 영화 id (str)
     title : 왓챠 영화 제목 (str)
+    synopsis : 영화 요약 소개
     year : 연도 (str)
     genre : 장르 (str)
     country : 국가 (str)
@@ -39,6 +40,7 @@ def get_movie_info(movie_name, movie_id, watcha_infos, naver_infos, wiki_infos):
     movie_info['movie_name'] = movie_name
     movie_info['movie_id'] = movie_id 
     movie_info['movie_title'] = watcha_infos['title']
+    movie_info['synopsis'] = watcha_infos['movie_synopsis']
 
     # 왓챠 후처리
     tmp = watcha_infos['movie_info'].split('·')
