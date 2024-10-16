@@ -65,7 +65,7 @@ def get_watch_infos(driver:webdriver.Chrome, movie_id:str, n_comment:int = 10) -
     watcha_infos['cast_production_info_list'] = cast_production_info_list
 
     # 영화 내용 소개
-    movie_synopsis_xpath = '//*[@id="root"]/div[1]/section/div/div[2]/div/div/div[2]/section[1]/div[2]/section[3]/p'
+    movie_synopsis_xpath = '//*[@id="root"]/div[1]/section/div/div[2]/div/div/div[2]/section/div[2]/section[2]/p' 
     watcha_infos['movie_synopsis'] = get_text_by_xpath(driver, movie_synopsis_xpath)
 
     # 평균평점
