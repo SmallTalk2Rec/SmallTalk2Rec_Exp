@@ -1,3 +1,4 @@
 .env
 pyproject*
 poetry*
+__pycache__
