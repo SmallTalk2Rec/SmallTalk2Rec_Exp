@@ -2,4 +2,4 @@
 pyproject*
 poetry*
 __pycache__
-.xlsx
+*.xlsx
