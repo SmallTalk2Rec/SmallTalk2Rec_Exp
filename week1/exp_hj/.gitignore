@@ -1,0 +1,7 @@
+.env
+pyproject*
+poetry*
+__pycache__
+*.csv
+*.duckdb
+*.md
