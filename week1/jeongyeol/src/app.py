@@ -68,7 +68,7 @@ def clear_chat_history():
     st.session_state.messages = [
         {
             "role": "assistant",
-            "content": "안녕하세요 제주도 맛집 추천 챗봇입니다. 무엇을 도와드릴까요?",
+            "content": "안녕하세요 영화 추천 챗봇입니다. 무엇을 도와드릴까요?",
         }
     ]
 

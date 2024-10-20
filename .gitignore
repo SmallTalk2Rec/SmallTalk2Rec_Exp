@@ -1,8 +1,4 @@
 .env
 pyproject*
 poetry*
-
-__pycache__/
-data/
-test.ipynb
-test.py
+__pycache__

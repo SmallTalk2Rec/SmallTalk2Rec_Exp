@@ -37,6 +37,3 @@ if not os.path.exists(config["URI_PATH"]):
 
 movie_db = SQLDatabase.from_uri(f"sqlite:///{config['URI_PATH']}")
 movie_db_tool = QuerySQLDataBaseTool(db=movie_db)
-
-
-embeddings = HuggingFaceEmbeddings(model="BAAI/bge-m3")
