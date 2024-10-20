@@ -1,0 +1,8 @@
+.env
+pyproject*
+poetry*
+__pycache__
+
+test*.ipynb
+data/
+test.py
