@@ -1,0 +1,2 @@
+CSV_PATH: ./data/movies_sample_cleaned.csv
+URI_PATH: ./data/movies_sample_cleaned.db
