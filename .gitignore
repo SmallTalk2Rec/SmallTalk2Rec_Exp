@@ -3,3 +3,4 @@ pyproject*
 poetry*
 __pycache__
 *.xlsx
+*.csv
