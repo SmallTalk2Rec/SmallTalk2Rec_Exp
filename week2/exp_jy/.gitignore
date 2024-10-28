@@ -2,5 +2,7 @@
 pyproject*
 poetry*
 __pycache__
-*.xlsx
-*.csv
+
+test*.ipynb
+data/
+test.py
