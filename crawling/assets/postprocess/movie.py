@@ -1,4 +1,21 @@
-from assets.utils import *
+from assets.utils.re import time_to_minutes, extract_movie_age, extract_number
+
+def separate_cast(cast_list):
+    main_cast = []  # 주연 리스트
+    supporting_cast = []  # 조연 리스트
+
+    for item in cast_list:
+        if '주연' in item:
+            # 주연 항목에서 이름만 추출 (이름은 '\n' 앞에 있음)
+            name = item.split('\n')[0]
+            main_cast.append(name)
+        elif '조연' in item:
+            # 조연 항목에서 이름만 추출 (이름은 '\n' 앞에 있음)
+            name = item.split('\n')[0]
+            supporting_cast.append(name)
+
+    return main_cast, supporting_cast
+
 
 def get_movie_info(movie_name, movie_id, watcha_infos, naver_infos, wiki_infos):
     # 후처리
